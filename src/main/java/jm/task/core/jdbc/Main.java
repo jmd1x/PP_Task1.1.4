@@ -1,25 +1,23 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.dao.UserDao;
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
-import jm.task.core.jdbc.util.Util;
+import jm.task.core.jdbc.service.UserService;
+import jm.task.core.jdbc.service.UserServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
-        Util.getConnection();
-        UserDao userDao = new UserDaoJDBCImpl();
+        UserService userService = new UserServiceImpl();
 
-        userDao.createUsersTable();
+        userService.createUsersTable();
 
-        userDao.saveUser("Jose", "Mourinho", (byte) 55);
-        userDao.saveUser("Frank", "Lampard", (byte) 45);
-        userDao.saveUser("Wayne", "Rooney", (byte) 43);
-        userDao.saveUser("Alexander", "Kerzhakov", (byte) 39);
+        userService.saveUser("Jose", "Mourinho", (byte) 55);
+        userService.saveUser("Frank", "Lampard", (byte) 45);
+        userService.saveUser("Wayne", "Rooney", (byte) 43);
+        userService.saveUser("Alexander", "Kerzhakov", (byte) 39);
 
-        userDao.removeUserById(1);
-        userDao.getAllUsers();
-        userDao.cleanUsersTable();
-        userDao.dropUsersTable();
+        userService.removeUserById(1);
+        userService.getAllUsers();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
         // реализуйте алгоритм здесь
     }
 }
