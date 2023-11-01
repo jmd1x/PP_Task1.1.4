@@ -66,5 +66,4 @@ public class Util {
         return sessionFactory;
     }
 
-    // реализуйте настройку соеденения с БД
 }
